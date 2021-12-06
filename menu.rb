@@ -20,4 +20,12 @@ class Menu
     def get_items
         @menu_items 
     end
+
+    def display
+        puts "Menu"
+        puts "------"
+        @menu_items.each {|item| puts item }
+        # Return nil so we don't implicitly return the last item in our above loop when trying to print menu
+        return nil 
+    end
 end
