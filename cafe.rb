@@ -23,4 +23,8 @@ class Cafe
     def get_order
         @order
     end
+
+    def welcome
+        puts "Welcome to #{@name}!"
+    end
 end
