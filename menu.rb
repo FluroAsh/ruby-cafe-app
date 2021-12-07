@@ -1,6 +1,5 @@
 require_relative './menu_item'
 
-
 class Menu
     def initialize
         @menu_items = []
