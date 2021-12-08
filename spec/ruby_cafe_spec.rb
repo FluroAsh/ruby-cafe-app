@@ -101,7 +101,7 @@ describe Cafe do
     
     it 'should calculate order total' do
         name = "My cafe"
-        menu_items = {latte: 4.00, tea: 2.00}
+        menu_items = {"latte" => 4.00, "tea" => 2.00}
         cafe = Cafe.new(name, menu_items)    
         item = "latte"
         quantity = 1
@@ -109,6 +109,7 @@ describe Cafe do
         item = "latte"
         quantity = 2
         cafe.add_to_order(item, quantity)
-        expect(cafe.order_total).to be(12.00)
+        expect(cafe.order_total).to be(12.00) # Is getting 'nil'?
+        # expect(menu.get_price(name)).to eq(price)
     end
 end

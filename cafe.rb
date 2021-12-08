@@ -37,7 +37,6 @@ class Cafe
         total = 0 
         @order.get_items.each do |item, quantity|
             total += @menu.get_price(item) * quantity
-            puts item, quantity
         end
         return total 
     end
@@ -53,3 +52,10 @@ class Cafe
         puts 
     end
 end
+
+# name = "My cafe"
+# menu_items = {latte: 4.00, tea: 2.00}
+# cafe = Cafe.new(name, menu_items)    
+# item = "latte"
+# quantity = 1
+# cafe.add_to_order(item, quantity)
