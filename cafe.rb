@@ -26,7 +26,9 @@ class Cafe
     end
 
     def welcome
-        puts "Welcome to #{@name}!"
+        puts
+        puts "*** Welcome to #{@name}! ***"
+        puts
     end
 
     def print_menu
@@ -42,20 +44,13 @@ class Cafe
     end
 
     def print_order
-        if @order
-            @order.display
+        if @order.get_items.empty? == false # @order on its own doesn't work?
+            @order.display # Prints our menu_items and price
             # String formatting to 2 decimal places - where % is our string
-            puts "Total:    $%.2f" % order_total 
+            puts "TOTAL:    $%.2f" % order_total 
         else
             puts "Thank you for coming!"
         end
         puts 
     end
 end
-
-# name = "My cafe"
-# menu_items = {latte: 4.00, tea: 2.00}
-# cafe = Cafe.new(name, menu_items)    
-# item = "latte"
-# quantity = 1
-# cafe.add_to_order(item, quantity)

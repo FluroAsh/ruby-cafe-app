@@ -1,6 +1,8 @@
 require_relative './menu_item'
 
 class Menu
+    attr_reader :menu_items
+    
     def initialize
         @menu_items = []
     end 
@@ -17,14 +19,25 @@ class Menu
     end 
 
     def get_items
-        @menu_items 
+        return @menu_items 
     end
 
     def display
-        puts "Menu"
-        puts "------"
-        @menu_items.each {|item| puts item }
+        puts "-----------------------"
+        puts "|         Menu        |"
+        puts "-----------------------"
+        @menu_items.each { |item| puts item }
         # Return nil so we don't implicitly return the last item in our above loop when trying to print menu
+        puts "-----------------------"
         return nil 
+    end
+
+    def validate_item(name)
+        @menu_items.each do |item|
+            if item.name == name
+                return name
+            end
+        end
+        return nil # Return nil if no match found
     end
 end
